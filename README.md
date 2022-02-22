@@ -2,7 +2,7 @@
 ARACNe-AP trial with the test dataset provided in the main repository
 
 
-		wget https://github.com/califano-lab/ARACNe-AP/archive/refs/heads/master.zip
+	wget https://github.com/califano-lab/ARACNe-AP/archive/refs/heads/master.zip
 
 
  ls
