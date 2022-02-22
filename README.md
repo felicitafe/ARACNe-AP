@@ -30,6 +30,7 @@ get the repository
 	aracne  bin  build.xml  common  dist  docs  LICENSE.md  lib  README.md  test
 
 run the first command in order to obtain MI (mutual informartion) treshold
+	
 	java -Xmx5G -jar dist/aracne.jar -e test/matrix.txt  -o outputFolder --tfs test/tfs.txt --pvalue 1E-8 --seed 1 --calculateThreshold
 	Finding threshold for 200 samples
 	Parameters for fitted threshold function: [0.12173630651920428, 6.225412313429598E-6]
