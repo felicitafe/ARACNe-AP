@@ -53,8 +53,10 @@ Run 100 reproducible bootstraps
 	(unix) for i in {1..100}; do java -Xmx5G -jar dist/aracne.jar -e test/matrix.txt  -o outputFolder --tfs test/tfs.txt --pvalue 1E-8 --seed $i; done
 	
 	
+Run a single ARACNE with no bootstrap and no DPI	
 	
 	java -Xmx5G -jar dist/aracne.jar -o outputFolder --consolidate
 
+Consolidate bootstraps without Bonferroni correction
 
 	java -Xmx5G -jar dist/aracne.jar -e test/matrix.txt  -o outputFolder --tfs test/tfs.txt --pvalue 1E-8 --seed 1 --nobootstrap --nodpi
