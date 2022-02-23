@@ -15,7 +15,7 @@ Building consensus network. A consensus network is computed by estimating the st
 get the repository
 	wget https://github.com/califano-lab/ARACNe-AP/archive/refs/heads/master.zip
 
-#look inside
+Look inside
 	ls
 	master.zip  
 
@@ -30,39 +30,31 @@ get the repository
 
 	ant main
 
-
-	main:
-	BUILD SUCCESSFUL
-	Total time: 24 seconds
+First look what we have
 	
 	ls
 	aracne  bin  build.xml  common  dist  docs  LICENSE.md  lib  README.md  test
 
-run the first command in order to obtain MI (mutual informartion) treshold
+run the first command in order to obtain MI (mutual informartion) treshold with a fixed seed
 	
 	java -Xmx5G -jar dist/aracne.jar -e test/matrix.txt  -o outputFolder --tfs test/tfs.txt --pvalue 1E-8 --seed 1 --calculateThreshold
 	Finding threshold for 200 samples
 	Parameters for fitted threshold function: [0.12173630651920428, 6.225412313429598E-6]
 	MI threshold: 0.14343244938161612
 
-second
 
+Run ARACNe on a single bootstrap
 
 	java -Xmx5G -jar dist/aracne.jar -e test/matrix.txt  -o outputFolder --tfs test/tfs.txt --pvalue 1E-8 --seed 1
-	Bootstrapping input matrix 1 with 3971 genes and 200 samples
-	MI threshold file is present
-	Calculate network from: test/matrix.txt
-	TFs processed: 32
-	Time elapsed for calculating MI: 2 sec
-
-	DPI time elapsed: 0 sec
-	Edges removed by DPI:	12219
-	Final Network size:	9660
-	Total time elapsed: 3 sec
 	
 	
-next
+Run 100 reproducible bootstraps
 
 	(unix) for i in {1..100}; do java -Xmx5G -jar dist/aracne.jar -e test/matrix.txt  -o outputFolder --tfs test/tfs.txt --pvalue 1E-8 --seed $i; done
 	
 	
+	
+	java -Xmx5G -jar dist/aracne.jar -o outputFolder --consolidate
+
+
+	java -Xmx5G -jar dist/aracne.jar -e test/matrix.txt  -o outputFolder --tfs test/tfs.txt --pvalue 1E-8 --seed 1 --nobootstrap --nodpi
