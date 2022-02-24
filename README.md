@@ -16,24 +16,35 @@ get the repository
 	wget https://github.com/califano-lab/ARACNe-AP/archive/refs/heads/master.zip
 
 Look inside
-	ls
+	>ls
 	master.zip  
 
-	unzip master.zip
-	ls
+	>unzip master.zip
+	>ls
 	ARACNe-AP-master  master.zip
-	cd ARACNe-AP-master/
- 	ls
+	>cd ARACNe-AP-master/
+ 	>ls
 	aracne  build.xml  common  LICENSE.md  lib  README.md  test
 
 
 
-	ant main
+	>ant main
 
 First look what we have
 	
 	ls
 	aracne  bin  build.xml  common  dist  docs  LICENSE.md  lib  README.md  test
+	
+	
+	
+Dataset
+A text file, tab separated, with genes on rows and samples on columns
+
+	gene    Sample1   Sample2   Sample3
+	g1   1.8 5.2 4.1
+	g2   5.7 8.3 2.0
+	g3   6.2 3.1 9.2
+	g4   7.2 9.1 0.6
 
 run the first command in order to obtain MI (mutual informartion) treshold with a fixed seed
 	
